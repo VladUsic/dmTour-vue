@@ -39,7 +39,7 @@ const alertService = new AlertService(store);
 const loginService = new LoginService();
 const accountService = new AccountService(store, (<any>Vue).cookie, router);
 router.afterEach(() => {
-  if ( router.currentRoute.path.includes('register') ||router.currentRoute.path.includes('admin') || router.currentRoute.path.includes('account') ||  router.currentRoute.path.includes('not-found')  || router.currentRoute.path.includes('tour-page') ||router.currentRoute.path.includes('forbidden')){
+  if ( router.currentRoute.path.includes('commentary-page') || router.currentRoute.path.includes('register') ||router.currentRoute.path.includes('admin') || router.currentRoute.path.includes('account') ||  router.currentRoute.path.includes('not-found')  || router.currentRoute.path.includes('tour-page') ||router.currentRoute.path.includes('forbidden')){
     store.commit('setNavbarWillBeBlueValue', true);
   } else {
     store.commit('setNavbarWillBeBlueValue', false);

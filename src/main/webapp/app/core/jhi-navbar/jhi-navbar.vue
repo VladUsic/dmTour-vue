@@ -6,7 +6,7 @@
         <b-navbar-brand class="logo" b-link to="/">
             <!-- <span class="logo-img"></span> -->
             <img class="logo-img" v-on:click="goToHome()" :src="logo">
-            
+
         </b-navbar-brand>
         <b-navbar-brand center>
             <img class="logo-img-center" :src="travelGroup"/>
@@ -29,13 +29,13 @@
                         <span>Home</span>
                     </span>
                 </b-nav-item>
-                <b-nav-item to="/" exact >
+                <b-nav-item to="/blog-page" exact >
                     <span class="dropdown-item-on-focus">
                         <i class="fas fa-blog"></i>
                         <span>Blog</span>
                     </span>
                 </b-nav-item>
-                <b-nav-item to="/" exact >
+                <b-nav-item to="/commentary-page" exact >
                     <span class="dropdown-item-on-focus">
                         <i class="fas fa-comments"></i>
                         <span>Reviews</span>

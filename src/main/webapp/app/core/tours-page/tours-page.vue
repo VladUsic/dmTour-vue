@@ -153,22 +153,9 @@
                     </ul>
                 </div>
             </div>
-    <div class="pagination-wrapper">
-  <div class="pagination">
-    <a class="prev page-numbers" href="javascript:;">prev</a>
-    <span aria-current="page" class="page-numbers current">1</span>
-    <a class="page-numbers" href="javascript:;">2</a>
-    <a class="page-numbers" href="javascript:;">3</a>
-    <a class="page-numbers" href="javascript:;">4</a>
-    <a class="page-numbers" href="javascript:;">5</a>
-    <a class="page-numbers" href="javascript:;">6</a>
-    <a class="page-numbers" href="javascript:;">7</a>
-    <a class="page-numbers" href="javascript:;">8</a>
-    <a class="page-numbers" href="javascript:;">9</a>
-    <a class="page-numbers" href="javascript:;">10</a>
-    <a class="next page-numbers" href="javascript:;">next</a>
-  </div>
-</div>
+        </div>
+    <div class="row justify-content-center">
+            <b-pagination size="md" :total-rows="totalItems" v-model="page" :per-page="itemsPerPage" :change="loadPage(page)"></b-pagination>
         </div>
     </div>
 </template>
@@ -207,84 +194,7 @@ $easing: ease;
 
 //----------  pagination
 //------------------------------------------------------------------------------
-.pagination-wrapper {
-  text-align: center;
-  margin: 40px 0;
-}
-.pagination {
-	display: inline-block;
-	height: 70px;
-	margin-top: 70px;
-	padding: 0 25px;
-	border-radius: 35px;
-	background-color: $grey-light;
 
-	@include breakpoint(1199px) {
-		height: 50px;
-		margin-top: 50px;
-		padding: 0 10px;
-		border-radius: 25px;
-	}
-}
-.page-numbers {
-	display: block;
-	padding: 0 25px;
-	float: left;
-	transition: $duration $easing;
-	color: $grey;
-	font-size: 20px;
-	letter-spacing: 0.1em;
-	line-height: 70px;
-
-	&:hover,
-	&.current {
-		background-color: $green;
-		color: $white;
-	}
-
-	&.prev:hover,
-	&.next:hover {
-		background-color: transparent;
-    color: $green;
-	}
-
-	@include breakpoint(1199px) {
-		padding: 0 15px;
-		font-size: 16px;
-		line-height: 50px;
-	}
-
-	@include breakpoint(touch) {
-		padding: 0 14px;
-		display: none;
-
-		&:nth-of-type(2) {
-			position: relative;
-			padding-right: 50px;
-
-			&::after {
-				content: '...';
-				position: absolute;
-				font-size: 25px;
-				top: 0;
-				left: 45px;
-			}
-		}
-
-		&:nth-child(-n+3),
-		&:nth-last-child(-n+3) {
-			display: block;
-		}
-
-		&:nth-last-child(-n+4) {
-			padding-right: 14px;
-
-			&::after {
-				content: none;
-			}
-		}
-	}
-}
 //----------  select menu
 //-----------------------------------------------------------------------------
 .select-css {
@@ -328,7 +238,6 @@ $easing: ease;
 .select-css option {
 	font-weight:normal;
 }
-
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 *,
 *:before,
@@ -357,9 +266,6 @@ $easing: ease;
     border: 0px; /* demo only */
 }
 /* Product Grid */
-body {
-    background: #fff;
-}
 h1 {
     font-weight: 500;
     font-size: 20px
@@ -433,21 +339,17 @@ ul.rig.columns-4 li {
         display: inline-block;
         margin: 0 0 5px;
     }
-
     ul.grid-nav li a {
         display: inline-block;
         margin: 0 0 5px;
     }
-
     ul.rig {
         margin-left: 0;
     }
-
     ul.rig li {
         width: 100% !important;
         margin: 0 0 10px;
     }
-
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

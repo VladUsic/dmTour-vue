@@ -8,8 +8,9 @@ import Vue2Filters from 'vue2-filters';
 })
 export default class JhiAudits extends Vue {
   public audits: any = [];
-  public fromDate: any = null;
+  public totalItems = 0;
   public itemsPerPage = 20;
+  public fromDate: any = null;
   public queryCount: any = null;
   public page = 1;
   public previousPage = 1;
@@ -17,7 +18,6 @@ export default class JhiAudits extends Vue {
   public predicate = 'timestamp';
   public reverse = false;
   public toDate: any = null;
-  public totalItems = 0;
   public isFetching = false;
   @Inject('auditsService') private auditsService: () => AuditsService;
 

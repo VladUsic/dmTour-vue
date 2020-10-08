@@ -12,6 +12,8 @@ const Error = () => import('@/core/error/error.vue');
 const PickATourPage = () => import('@/core/pick-a-tour-page/pick-a-tour-page.vue');
 const OrderTour = () => import('@/core/order-tour-page/order-tour-page.vue');
 const ToursPage = () => import('@/core/tours-page/tours-page.vue');
+const CommentaryPage = () => import('@/core/commentary-page/commentary-page.vue');
+const BlogPage = () => import('@/core/blog-page/blog-page.vue');
 import account from '@/router/account.ts';
 import admin from '@/router/admin.ts';
 import entities from '@/router/entities.ts';
@@ -44,6 +46,18 @@ export default new Router({
       path: '/tour-page',
       name: 'Tour Page',
       component:ToursPage,
+      meta: { error404: true }
+    },
+    {
+      path: '/commentary-page',
+      name: 'Commentary Page',
+      component:CommentaryPage,
+      meta: { error404: true }
+    },
+    {
+      path: '/blog-page',
+      name: 'Blog Page',
+      component:BlogPage,
       meta: { error404: true }
     },
     {

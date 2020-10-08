@@ -3,7 +3,7 @@ import {Vue } from 'vue-property-decorator';
 
 
 @Component
-export default class ToursPage extends Vue {
+export default class CommentaryPage extends Vue {
   public audits: any = [];
   public totalItems = 0;
   public itemsPerPage = 20;
